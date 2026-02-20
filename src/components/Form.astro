@@ -42,7 +42,12 @@ import BTGLogo from "@/assets/img-logo.svg";
 
         <div class="mc-field-group">
           <label for="mce-MMERGE6" class="text-lg">Tipo de documento </label>
-          <select name="MMERGE6" class="text-lg w-full" id="mce-MMERGE6" required>
+          <select
+            name="MMERGE6"
+            class="text-lg w-full"
+            id="mce-MMERGE6"
+            required
+          >
             <option value=""></option>
             <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
             <option value="Cédula de Extranjería">Cédula de Extranjería</option>
@@ -333,6 +338,8 @@ import BTGLogo from "@/assets/img-logo.svg";
   const input = document.getElementById("mce-INVITO");
   const radio = document.getElementById("mce-INVI_OTRO0");
   const datalistId = document.getElementById("lista-comerciales");
+  const dataListContent = [...datalistId.children];
+  const commercialNames = dataListContent.map((option) => option.value);
 
   input.addEventListener("input", () => {
     if (input.value.length > 0) {
@@ -344,10 +351,23 @@ import BTGLogo from "@/assets/img-logo.svg";
     }
   });
 
+  input.addEventListener("blur", () => {
+    if (!commercialNames.includes(input.value)) {
+      const errorDiv = document.createElement("div");
+      errorDiv.classList.add("mce_inline_error");
+      errorDiv.style.display = "block";
+      errorDiv.textContent = `${input.value} no es un comercial válido. Por favor, seleccione un nombre de la lista o deje el campo vacío.`;
+      input.insertAdjacentElement("afterend", errorDiv);
+      input.classList.add("mce_inline_error");
+    }
+  });
+
   radio.addEventListener("change", () => {
     if (radio.checked) {
       input.value = "";
       input.removeAttribute("list");
+      input.classList.remove("mce_inline_error");
+      input.nextElementSibling.style.display = "none";
       radio.value = "Invitado por otro";
     }
   });
@@ -398,8 +418,7 @@ import BTGLogo from "@/assets/img-logo.svg";
 <script
   src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
   async
-  defer
-></script>
+  defer></script>
 
 <script type="text/javascript">
   (function ($) {

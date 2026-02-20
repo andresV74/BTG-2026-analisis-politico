@@ -10,7 +10,7 @@ import EventTitle from "@/assets/img--event-title.webp";
 import Map from "@/assets/img--colombia-map.webp";
 ---
 
-<div class={`shrink-0 relative ${marginTop}`}>
+<div class={`relative ${marginTop}`}>
   <h2>
     <Image
       src={EventTitle}
@@ -24,7 +24,7 @@ import Map from "@/assets/img--colombia-map.webp";
   <Image
     src={Map}
     alt="Mapa de Colombia"
-    width={441}
+    width={400}
     class="mx-auto hidden lg:block absolute -bottom-px m-0 left-0 right-0"
   />
 </div>
@@ -38,7 +38,7 @@ import Map from "@/assets/img--colombia-map.webp";
     font-size: 1.6875rem;
 
     @media (min-width: 1024px) {
-      font-size: clamp(2.125rem, 0.625rem + 2.3438vw, 2.5rem);
+      font-size: clamp(2.125rem, 1.625rem + 0.7813vw, 2.25rem);
     }
   }
 </style>
