@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: 'BTG Pactual Office';
+	src: url('/fonts/BTGSans-Bd.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'BTG Pactual Office';
+	src: url('/fonts/BTGSans-Lt.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'BTG Pactual Office';
+	src: url('/fonts/BTGSans-Rg.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'BTG Pactual Office';
+	src: url('/fonts/BTGSans-Sb.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'BTG Pactual Office';
+	src: url('/fonts/BTGSans-Th.woff2') format('woff2');
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'BTG Pactual Office';
+	src: url('/fonts/BTGSans-Hr.woff2') format('woff2');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@theme {
+	--color-btg-0: #D2E5FF;
+	--color-btg-05: #C2D4EF;
+	--color-btg-075: #AEC0DB;
+	--color-btg-1: #87BAFF;
+	--color-btg-15: #6BAAFF;
+	--color-btg-2: #549CFF;
+	--color-btg-3: #307AE0;
+	--color-btg-4: #195AB4;
+	--color-btg-5: #10408D;
+	--color-btg-55: #004191;
+	--color-btg-6: #0B2859;
+	--color-btg-7: #061732;
+	--color-btg-8: #05132A;
+	--color-btg-9: #01132C;
+	--color-btg-grey: #b3b3b3;
+}

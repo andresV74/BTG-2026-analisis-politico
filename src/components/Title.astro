@@ -1,0 +1,44 @@
+---
+interface Props {
+  marginTop: string;
+}
+
+const { marginTop } = Astro.props as Props;
+
+import Image from "astro/components/Image.astro";
+import EventTitle from "@/assets/img--event-title.webp";
+import Map from "@/assets/img--colombia-map.webp";
+---
+
+<div class={`shrink-0 relative ${marginTop}`}>
+  <h2>
+    <Image
+      src={EventTitle}
+      alt="Colombia frente al futuro, elecciones presidenciales 2026"
+      class="title"
+    />
+  </h2>
+  <p class="date text-3xl font-light md:text-[2.5rem] mt-17 tracking-tight">
+    Miércoles 4 de marzo - 4:00 pm
+  </p>
+  <Image
+    src={Map}
+    alt="Mapa de Colombia"
+    width={441}
+    class="mx-auto hidden lg:block absolute -bottom-px m-0 left-0 right-0"
+  />
+</div>
+
+<style>
+  .title {
+    width: clamp(20rem, 14.5217rem + 24.3478vw, 34rem);
+  }
+
+  .date {
+    font-size: 1.6875rem;
+
+    @media (min-width: 1024px) {
+      font-size: clamp(2.125rem, 0.625rem + 2.3438vw, 2.5rem);
+    }
+  }
+</style>

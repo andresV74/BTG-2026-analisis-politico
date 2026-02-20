@@ -1,0 +1,68 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Google tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-327447406"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-327447406");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>BTG Pactual :: Evento virtual</title>
+    <meta name="description" content="BTG Pactual :: Evento en vivo" />
+
+    <link rel="icon" type="image/ico" href="./favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+    <meta property="og:title" content="BTG Pactual :: Evento en vivo" />
+    <meta property="og:image" content="./android-chrome-512x512.png" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <slot />
+    <script is:inline>
+      function onSubmit(token) {
+        document.getElementById("mc-embedded-subscribe-form").requestSubmit();
+      }
+    </script>
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #ffffff;
+    font-family: "BTG Pactual Office", sans-serif;
+    font-size: 16px;
+    line-height: 1.125rem;
+  }
+</style>

@@ -1,0 +1,32 @@
+---
+import BTGLogo from "@/assets/img-logo.svg";
+import Form from "@/components/Form.astro";
+import Title from "@/components/Title.astro";
+---
+
+<section class="bg-btg-9 px-5">
+  <div class="max-w-300 mx-auto bg-radial from-btg-55 to-btg-9 to-70% pt-14.5">
+    <h1 aria-label="BTG Pactual">
+      <BTGLogo class="w-53.5" />
+    </h1>
+    <div
+      class="flex flex-col lg:flex-row justify-center gap-12 pt-17 text-white"
+    >
+      <Title marginTop="lg:mt-12" />
+      <div class="form-wrapper place-self-center pb-14.5">
+        <p class="text-4xl ms-10.5 pb-1 border-b-2 mb-5 w-fit">
+          Evento virtual
+        </p>
+        <Form />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .form-wrapper {
+    @media (min-width: 1024px) {
+      width: clamp(30rem, -2.5rem + 50.7813vw, 38.125rem);
+    }
+  }
+</style>

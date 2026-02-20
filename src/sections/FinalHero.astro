@@ -1,0 +1,32 @@
+---
+import BTGLogo from "@/assets/img-logo.svg";
+import Cta from "@/components/Cta.astro";
+import Title from "@/components/Title.astro";
+---
+
+<section class="hero bg-cover px-5">
+  <div class="max-w-300 mx-auto pt-20.5 pb-30">
+    <h1 aria-label="BTG Pactual">
+      <BTGLogo class="w-53.5" />
+    </h1>
+    <div
+      class="flex flex-col xl:flex-row justify-center gap-22 pt-20 lg:ps-12 text-white"
+    >
+      <Title marginTop="xl:mt-5" />
+      <div class="hidden xl:block bg-white w-0.5"></div>
+      <div class="shrink-0 max-w-120 place-self-center">
+        <Cta />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background-image: url("/images/bg-hero-mobile.jpg");
+
+    @media (min-width: 1024px) {
+      background-image: url("/images/bg-hero-desktop.jpg");
+    }
+  }
+</style>

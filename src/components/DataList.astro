@@ -1,0 +1,11 @@
+---
+import { dataListData } from "@/consts/dataListData";
+---
+
+<datalist id="lista-comerciales">
+	{
+		dataListData.map((item) => (
+			<option value={item.name}></option>
+		))
+	}
+</datalist>

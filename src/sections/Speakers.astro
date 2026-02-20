@@ -1,0 +1,21 @@
+---
+import Speaker from "@/components/speaker.astro";
+import { speakersData } from "@/consts/speakersData.ts";
+---
+
+<section class="bg-btg-6 px-5 pt-20 pb-23">
+  <div class="max-w-308.5 mx-auto flex flex-wrap justify-center lg:grid grid-cols-3 gap-x-5">
+    {speakersData.map(({ title, name, position, image, imageWidth, content: Content, id }) => (
+      <Speaker
+        title={title}
+        name={name}
+        position={position}
+        imageSrc={image}
+        imageWidth={imageWidth}
+        id={id}
+      >
+        <Content />
+      </Speaker>
+    ))}
+  </div>
+</section>

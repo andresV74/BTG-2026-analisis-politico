@@ -1,0 +1,419 @@
+---
+import DataList from "@/components/DataList.astro";
+import BTGLogo from "@/assets/img-logo.svg";
+---
+
+<div id="mc_embed_shell" class="bg-btg-6 px-8 lg:px-10.5 py-8">
+  <div id="mc_embed_signup">
+    <form
+      method="post"
+      id="mc-embedded-subscribe-form"
+      name="mc-embedded-subscribe-form"
+      class="validate"
+      novalidate
+    >
+      <div id="mc_embed_signup_scroll">
+        <h2 class="text-[2.25rem]/9 mb-5 font-light">Regístrese aquí:</h2>
+
+        <div class="mc-field-group">
+          <label for="mce-FNAME" class="text-lg">Nombres y apellidos</label>
+          <input
+            type="text"
+            name="FNAME"
+            class="w-full"
+            id="mce-FNAME"
+            value=""
+            autocomplete="name"
+            required
+          />
+          <div class="mce_inline_error"></div>
+        </div>
+
+        <div class="mc-field-group">
+          <label for="mce-EMAIL" class="text-lg">Correo electrónico</label>
+          <input
+            type="email"
+            name="EMAIL"
+            class="required email w-full"
+            id="mce-EMAIL"
+            required
+            value=""
+            autocomplete="email"
+          />
+          <div class="mce_inline_error"></div>
+        </div>
+
+        <div class="mc-field-group">
+          <label for="mce-MMERGE6" class="text-lg">Tipo de documento</label>
+          <select name="MMERGE6" class="w-full" id="mce-MMERGE6" required>
+            <option value=""></option>
+            <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+            <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+            <option value="NIT Persona Natural">NIT Persona Natural</option>
+            <option value="NIT Persona Jurídica">NIT Persona Jurídica</option>
+            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+          </select>
+          <div class="mce_inline_error"></div>
+        </div>
+
+        <div class="mc-field-group">
+          <label for="mce-PHONE" class="text-lg">Número de documento</label>
+          <input
+            type="number"
+            name="PHONE"
+            class="REQ_CSS w-full"
+            id="mce-PHONE"
+            value=""
+            autocomplete="identification-number"
+            required
+          />
+          <div class="mce_inline_error"></div>
+        </div>
+
+        <div class="mc-field-group border-t border-b pt-5 pb-8">
+          <p class="text-lg pb-2">¿Cómo se enteró de este evento?</p>
+          <label for="mce-INVITO" class="mb-1 block"
+            >Si alguien de BTG Pactual lo invitó, indíquenos su nombre</label
+          >
+          <input
+            type="text"
+            name="INVITO"
+            class="text w-full"
+            id="mce-INVITO"
+            value=""
+            autocomplete="off"
+          />
+          <DataList />
+          <label
+            for="mce-INVI_OTRO0"
+            class="flex flex-nowrap gap-3 items-center mt-4"
+          >
+            <input
+              type="checkbox"
+              name="INVI_OTRO"
+              id="mce-INVI_OTRO0"
+              value=""
+              class="w-6 h-6 not-last:shrink-0"
+            />
+            <p>Se enteró por otro medio</p>
+          </label>
+        </div>
+
+        <div
+          id="mergeRow-gdpr"
+          class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group"
+        >
+          <div class="content__gdpr">
+            <fieldset
+              class="mc_fieldset gdprRequired mc-field-group"
+              name="interestgroup_field"
+            >
+              <label
+                class="checkbox subfield grid grid-cols-[20px,auto] gap-x-5 gap-y-2"
+                for="gdpr315611"
+              >
+                <input
+                  type="checkbox"
+                  id="gdpr_315611"
+                  name="gdpr[315611]"
+                  class="gdpr w-5 shrink-0"
+                  value="Y"
+                  required
+                />
+                <div class="mce_inline_error row-start-2 col-span-2"></div>
+
+                <p class="text-[0.625rem]/3 col-start-2 row-start-1">
+                  Con el diligenciamiento de esta información, usted autoriza
+                  para que BTG Pactual realice tratamiento sobre su información
+                  personal conforme a la política de protección de datos
+                  personales Ley 1581 de 2012. Para mayor información, <a
+                    class="text-blue-1 underline hover:no-underline"
+                    href="https://www.btgpactual.com.co/proteccion-de-datos"
+                    target="_blank">consulte aquí nuestra política</a
+                  >.
+                </p>
+              </label>
+            </fieldset>
+          </div>
+        </div>
+        <div id="mce-responses" class="clear">
+          <div
+            class="response text-orange-700 text-center mb-5 font-bold"
+            id="mce-error-response"
+            style="display: none;"
+          >
+          </div>
+          <div
+            class="response text-green-100 text-center mb-5 font-bold"
+            id="mce-success-response"
+            style="display: none;"
+          >
+          </div>
+        </div>
+        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+          <input
+            type="text"
+            name="b_0196d3c76853b6f37b3060933_85a3088c3e"
+            tabindex="-1"
+            value=""
+          />
+        </div>
+
+        <div class="clear">
+          <input
+            type="submit"
+            name="subscribe"
+            id="mc-embedded-subscribe"
+            class="button"
+            value="Enviar"
+          />
+        </div>
+      </div>
+    </form>
+    <dialog class="successPopup">
+      <form method="dialog" class="absolute top-8 right-8">
+        <button
+          class="appearance-none text-2xl/0 text-white font-bold cursor-pointer"
+        >
+          x
+        </button>
+      </form>
+      <BTGLogo class="w-45 mx-auto" />
+      <p class="pt-10 text-4xl">¡Su registro fue exitoso!</p>
+      <p class="pt-6 text-2xl">
+        Al correo electrónico registrado le llegará el link de conexión al
+        evento.
+      </p>
+      <p class="pt-6 text-2xl">Verifique la bandeja de correo no deseado.</p>
+    </dialog>
+  </div>
+</div>
+
+<style is:global type="text/css">
+  #mergeRow-gdpr {
+    margin-top: 20px;
+  }
+  #mergeRow-gdpr fieldset label {
+    font-weight: normal;
+  }
+  #mc-embedded-subscribe-form .mc_fieldset {
+    border: none;
+    min-height: 0px;
+    padding-bottom: 0px;
+  }
+
+  .mc-field-group:not(input[type="checkbox"]) {
+    margin-bottom: 30px;
+  }
+  select,
+  ::picker(select) {
+    appearance: base-select;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+  select {
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #b3b3b3;
+    border-radius: 12px;
+    color: #000;
+    font-size: 1.125rem;
+    height: 40px;
+    padding-inline: 16px;
+
+    &::placeholder {
+      font-size: 1.25rem;
+    }
+
+    &:focus {
+      border-color: var(--color-btg-2);
+      box-shadow: 0 0 0px 2px var(--color-btg-2);
+      outline: none;
+    }
+  }
+
+  input[type="submit"] {
+    background-color: var(--color-btg-3);
+    border: none;
+    border-radius: 0;
+    color: var(--color-blue-1);
+    cursor: pointer;
+    display: block;
+    font-size: 2.125rem;
+    font-weight: 600;
+    height: 52px;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+    width: 17.375rem;
+
+    &:hover {
+      background-color: var(--color-btg-4);
+      color: #fff;
+    }
+  }
+
+  input + .mce_inline_error,
+  .checkbox + .mce_inline_error,
+  select + .mce_inline_error {
+    color: var(--color-red-300);
+    display: none;
+    font-size: 0.875rem;
+    line-height: 1;
+    margin-left: 10px;
+    margin-top: 6px;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .successPopup {
+    background-image: url("/images/bg-dialog.jpg");
+    color: #fff;
+    padding: 52px 60px;
+    margin: auto;
+    max-width: 600px;
+    text-align: center;
+    transition: all 0.6s ease-in-out allow-discrete;
+
+    @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+      opacity: unset;
+      transform: unset;
+    }
+
+    &[open] {
+      opacity: 100;
+    }
+
+    @starting-style {
+      &[open] {
+        opacity: 0;
+      }
+    }
+
+    &::backdrop {
+      background-color: #000;
+      opacity: 0;
+      transition: all 0.6s allow-discrete;
+    }
+
+    &[open]::backdrop {
+      background-color: #000;
+      opacity: 0.75;
+    }
+
+    @starting-style {
+      &[open]::backdrop {
+        background-color: #000;
+        opacity: 0;
+      }
+    }
+  }
+</style>
+
+<script is:inline>
+  const input = document.getElementById("mce-INVITO");
+  const radio = document.getElementById("mce-INVI_OTRO0");
+  const datalistId = document.getElementById("lista-comerciales");
+
+  input.addEventListener("input", () => {
+    if (input.value.length > 0) {
+      input.setAttribute("list", datalistId.id);
+      radio.checked = false;
+      radio.value = "";
+    } else {
+      input.removeAttribute("list");
+    }
+  });
+
+  radio.addEventListener("change", () => {
+    if (radio.checked) {
+      input.value = "";
+      input.removeAttribute("list");
+      radio.value = "Invitado por otro";
+    }
+  });
+
+  const form = document.getElementById("mc-embedded-subscribe-form");
+  const formFields = [...form.querySelectorAll("input, select")];
+  const messageField = document.getElementById("mce-success-response");
+  const successPopup = document.querySelector(".successPopup");
+
+  const validateForm = () => {
+    return formFields.every((field) => {
+      if (!field.validity.valid) {
+        const errorElement = field.nextElementSibling;
+        errorElement.classList.add("active");
+        if (field.validity.valueMissing) {
+          errorElement.textContent = field.validationMessage;
+        } else if (field.validity.typeMismatch) {
+          errorElement.textContent = "Por favor, ingrese un correo válido.";
+        }
+        return false;
+      }
+      return true;
+    });
+  };
+
+  const resetError = (field) => {
+    field.classList.remove("mce_inline_error");
+    const errorElement = field.nextElementSibling;
+    if (errorElement && errorElement.classList.contains("mce_inline_error")) {
+      errorElement.classList.remove("active");
+    }
+  };
+
+  formFields.forEach((field) => {
+    field.addEventListener("input", () => {
+      resetError(field);
+    });
+  });
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const email = formData.get("EMAIL");
+    const FNAME = formData.get("FNAME");
+    const MMERGE6 = formData.get("MMERGE6");
+    const PHONE = formData.get("PHONE");
+    const INVITO = formData.get("INVITO");
+    const INVI_OTRO = formData.get("INVI_OTRO");
+    const gdpr = formData.get("gdpr[315611]");
+
+    if (validateForm()) {
+      messageField.textContent = "Enviando...";
+      messageField.style.display = "block";
+      try {
+        const res = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            FNAME,
+            MMERGE6,
+            PHONE,
+            INVITO,
+            INVI_OTRO,
+            gdpr
+          }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          messageField.textContent = "";
+          successPopup.showModal();
+          form.reset();
+        } else {
+          throw new Error(data.message);
+        }
+      } catch (error) {
+        messageField.innerText =
+          error.message || "Ocurrió un error inesperado.";
+        messageField.style.color = "red";
+      }
+    }
+  });
+</script>
