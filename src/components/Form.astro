@@ -97,10 +97,7 @@ import BTGLogo from "@/assets/img-logo.svg";
             autocomplete="off"
           />
           <DataList />
-          <label
-            for="mce-INVI_OTRO0"
-            class="flex flex-nowrap gap-3 items-center mt-4"
-          >
+          <div class="flex flex-nowrap gap-3 items-center mt-4 text-lg">
             <input
               type="checkbox"
               name="INVI_OTRO"
@@ -108,8 +105,10 @@ import BTGLogo from "@/assets/img-logo.svg";
               value=""
               class="w-6 h-6 not-last:shrink-0"
             />
-            <p class="text-lg">Se enteró por otro medio</p>
-          </label>
+            <p>
+              Se enteró por otro medio
+            </p>
+          </div>
         </div>
 
         <div
@@ -352,12 +351,15 @@ import BTGLogo from "@/assets/img-logo.svg";
   });
 
   input.addEventListener("blur", () => {
-    if (!commercialNames.includes(input.value)) {
+    if (!commercialNames.includes(input.value) && input.value.length > 0) {
+      if (input.nextElementSibling.classList.contains("mce_inline_error")) {
+        input.nextElementSibling.remove();
+      }
       const errorDiv = document.createElement("div");
       errorDiv.classList.add("mce_inline_error");
       errorDiv.style.display = "block";
       errorDiv.textContent = `${input.value} no es un comercial válido. Por favor, seleccione un nombre de la lista o deje el campo vacío.`;
-      input.insertAdjacentElement("afterend", errorDiv);
+      input.insertAdjacentElement("afterEnd", errorDiv);
       input.classList.add("mce_inline_error");
     }
   });
