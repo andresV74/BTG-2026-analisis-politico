@@ -5,21 +5,24 @@ import "../styles/global.css";
 <!doctype html>
 <html lang="es">
   <head>
-    <!-- Google tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-327447406"
+    <script is:inline src="https://www.google.com/recaptcha/api.js" async defer
     ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-327447406");
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MMFHRZGM");
     </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
     <title>
       BTG Pactual :: Colombia frente al futuro, elecciones presidenciales 2026
     </title>
@@ -27,7 +30,7 @@ import "../styles/global.css";
       name="description"
       content="BTG Pactual :: Evento en vivo :: Colombia frente al futuro, elecciones presidenciales 2026"
     />
-
+    <meta property="og:image" content="./bg-logo-shared.png" />
     <link rel="icon" type="image/ico" href="./favicon.ico" />
     <link
       rel="apple-touch-icon"
@@ -49,7 +52,6 @@ import "../styles/global.css";
     <link rel="manifest" href="./site.webmanifest" />
     <meta property="og:title" content="BTG Pactual :: Evento en vivo" />
     <meta property="og:image" content="./android-chrome-512x512.png" />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
     <slot />

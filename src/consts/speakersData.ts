@@ -36,7 +36,7 @@ export const speakersData: SpeakersData[] = [
 	},
 	{
 		name: 'Juliana\nOcampo',
-		position: 'Socia – Directora Orza Relacionamiento Estratégico SAS',
+		position: 'Socia – Directora Orza Relacionamiento Estratégico',
 		image: SpeakerImage3,
 		imageWidth: 'w-93',
 		content: Card_3,
