@@ -6,11 +6,14 @@ interface Props {
 const { marginTop } = Astro.props as Props;
 
 import Image from "astro/components/Image.astro";
-import EventTitle from "@/assets/img--event-title.webp";
+import EventTitle from "@/assets/img--event-title.svg";
 import Map from "@/assets/img--colombia-map.webp";
+import Time from "@/assets/ico-hora.svg";
+import Date from "@/assets/ico-fecha.svg";
 ---
 
 <div class={`relative ${marginTop}`}>
+  <p class="text-4xl pb-1 border-b-2 mb-12 w-fit">Evento virtual</p>
   <h2>
     <Image
       src={EventTitle}
@@ -18,8 +21,17 @@ import Map from "@/assets/img--colombia-map.webp";
       class="title"
     />
   </h2>
-  <p class="date text-3xl font-light md:text-[2.5rem] mt-17 tracking-tight">
-    Miércoles 4 de marzo - 4:00 pm
+  <p class="mt-17 flex items-center gap-4">
+    <span><Date width={30} /></span>
+    <span class="date pt-2 text-3xl md:text-[2.5rem]/10 font-light tracking-tight">
+      Miércoles 4 de marzo
+    </span>
+  </p>
+  <p class="mt-2 flex items-center gap-4">
+    <span><Time width={30} /></span>
+    <span class="date pt-2 text-3xl md:text-[2.5rem]/10 font-light tracking-tight"
+      >4:00 pm</span
+    >
   </p>
   <Image
     src={Map}
@@ -35,9 +47,9 @@ import Map from "@/assets/img--colombia-map.webp";
   }
 
   .date {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
 
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       font-size: clamp(2.125rem, 1.625rem + 0.7813vw, 2.25rem);
     }
   }
