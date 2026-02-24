@@ -5,6 +5,7 @@ interface DataListData {
 export const dataListData: DataListData[] = [
 	{ name: 'Alejandro Aparicio' },
 	{ name: 'Alejandro Mazo' },
+	{ name: 'Alexandra Ortegón' },
 	{ name: 'Alexia Marx' },
 	{ name: 'Ana Cristina Montoya' },
 	{ name: 'Ana María Estrada' },
@@ -42,6 +43,7 @@ export const dataListData: DataListData[] = [
 	{ name: 'Jorge Llano' },
 	{ name: 'José Joaquín Prieto' },
 	{ name: 'Juan Camilo Velásquez' },
+	{ name: 'Juan Camilo Montoya' },
 	{ name: 'Juan Felipe Plata' },
 	{ name: 'Juan Felipe Valencia' },
 	{ name: 'Juan Manuel Velasco' },
