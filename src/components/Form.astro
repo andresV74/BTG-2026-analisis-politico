@@ -83,7 +83,7 @@ import BTGLogo from "@/assets/img-logo.svg";
           />
         </div>
 
-        <div class="mc-field-group border-t border-b pt-5 pb-8">
+        <!-- <div class="mc-field-group border-t border-b pt-5 pb-8">
           <p class="text-xl pb-2">¿Cómo se enteró de este evento?</p>
           <label for="mce-INVITO" class="mb-1 block text-lg"
             >Si alguien de BTG Pactual lo invitó, indíquenos su nombre</label
@@ -109,7 +109,7 @@ import BTGLogo from "@/assets/img-logo.svg";
               Se enteró por otro medio
             </p>
           </div>
-        </div>
+        </div> -->
 
         <div
           id="mergeRow-gdpr"
@@ -333,59 +333,69 @@ import BTGLogo from "@/assets/img-logo.svg";
   type="text/javascript"
   src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
 
-<script is:inline>
-  const input = document.getElementById("mce-INVITO");
-  const radio = document.getElementById("mce-INVI_OTRO0");
-  const datalistId = document.getElementById("lista-comerciales");
-  const dataListContent = [...datalistId.children];
-  const commercialNames = dataListContent.map((option) => option.value);
+<script>
+  const input = document.getElementById("mce-INVITO") as HTMLInputElement;
+  const radio = document.getElementById("mce-INVI_OTRO0") as HTMLInputElement;
+  // const datalistId = document.getElementById(
+  //   "lista-comerciales",
+  // ) as HTMLDataListElement;
+  // const dataListContent = [...datalistId.children];
+  // const commercialNames = dataListContent.map(
+  //   (option) => (option as HTMLOptionElement).value,
+  // );
 
-  input.addEventListener("input", () => {
-    if (input.value.length > 0) {
-      input.setAttribute("list", datalistId.id);
-      radio.checked = false;
-      radio.value = "";
-    } else {
-      input.removeAttribute("list");
-    }
-  });
+  // input.addEventListener("input", () => {
+  //   if (input.value.length > 0) {
+  //     input.setAttribute("list", datalistId.id);
+  //     radio.checked = false;
+  //     radio.value = "";
+  //   } else {
+  //     input.removeAttribute("list");
+  //   }
+  // });
 
-  input.addEventListener("blur", () => {
-    if (!commercialNames.includes(input.value) && input.value.length > 0) {
-      if (input.nextElementSibling.classList.contains("mce_inline_error")) {
-        input.nextElementSibling.remove();
-      }
-      const errorDiv = document.createElement("div");
-      errorDiv.classList.add("mce_inline_error");
-      errorDiv.style.display = "block";
-      errorDiv.textContent = `${input.value} no es un comercial válido. Por favor, seleccione un nombre de la lista o deje el campo vacío.`;
-      input.insertAdjacentElement("afterEnd", errorDiv);
-      input.classList.add("mce_inline_error");
-    }
-  });
+  // input.addEventListener("blur", () => {
+  //   if (!commercialNames.includes(input.value) && input.value.length > 0) {
+  //     if (input.nextElementSibling?.classList.contains("mce_inline_error")) {
+  //       input.nextElementSibling.remove();
+  //     }
+  //     const errorDiv = document.createElement("div");
+  //     errorDiv.classList.add("mce_inline_error");
+  //     errorDiv.style.display = "block";
+  //     errorDiv.textContent = `${input.value} no es un comercial válido. Por favor, seleccione un nombre de la lista o deje el campo vacío.`;
+  //     input.insertAdjacentElement("afterend", errorDiv);
+  //     input.classList.add("mce_inline_error");
+  //   }
+  // });
 
-  radio.addEventListener("change", () => {
-    if (radio.checked) {
-      input.value = "";
-      input.removeAttribute("list");
-      input.classList.remove("mce_inline_error");
-      input.nextElementSibling.style.display = "none";
-      radio.value = "Invitado por otro";
-    }
-  });
+  // radio.addEventListener("change", () => {
+  //   if (radio.checked) {
+  //     input.value = "";
+  //     input.removeAttribute("list");
+  //     input.classList.remove("mce_inline_error");
+  //     (input.nextElementSibling as HTMLDataListElement).style.display = "none";
+  //     radio.value = "Invitado por otro";
+  //   }
+  // });
 
-  const form = document.getElementById("mc-embedded-subscribe-form");
-  const formFields = [...form.querySelectorAll("input, select")];
-  const messageField = document.getElementById("mce-success-response");
-  const successPopup = document.querySelector(".successPopup");
-  const successMessages = {
-    message1: "¡Gracias por suscribirse!",
-    message2: "Ya estás suscrito, tu perfil ha sido actualizado. ¡Gracias!",
-  };
+  const form = document.getElementById(
+    "mc-embedded-subscribe-form",
+  ) as HTMLFormElement;
+  const formFields = form ? [...form.querySelectorAll("input, select")] : [];
+  const messageField = document.getElementById(
+    "mce-success-response",
+  ) as HTMLDivElement;
+  const successPopup = document.querySelector(
+    ".successPopup",
+  ) as HTMLDialogElement;
+  const successMessages = [
+    "¡Gracias por suscribirse!",
+    "Ya estás suscrito, tu perfil ha sido actualizado. ¡Gracias!",
+  ];
 
-  const resetError = (field) => {
+  const resetError = (field: HTMLInputElement) => {
     field.classList.remove("mce_inline_error");
-    const errorElement = field.nextElementSibling;
+    const errorElement = field.nextElementSibling as HTMLDivElement;
     if (errorElement && errorElement.classList.contains("mce_inline_error")) {
       errorElement.style.display = "none";
     }
@@ -393,17 +403,15 @@ import BTGLogo from "@/assets/img-logo.svg";
 
   formFields.forEach((field) => {
     field.addEventListener("input", () => {
-      resetError(field);
+      resetError(field as HTMLInputElement);
       messageField.textContent = "";
     });
   });
 
   const observer = new MutationObserver((mutationsList) => {
     for (let mutation of mutationsList) {
-      if (
-        mutation.addedNodes[0]?.data === successMessages.message1 ||
-        mutation.addedNodes[0]?.data === successMessages.message2
-      ) {
+      const addedNode = mutation.addedNodes[0] as Text;
+      if (successMessages.includes(addedNode?.data)) {
         successPopup.showModal();
         messageField.textContent = "";
       }
