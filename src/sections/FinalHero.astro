@@ -1,32 +1,31 @@
 ---
 import BTGLogo from "@/assets/img-logo.svg";
-import Cta from "@/components/Cta.astro";
+import CTA from "@/components/Cta.astro";
 import Title from "@/components/Title.astro";
 ---
 
-<section class="hero bg-cover px-5">
-  <div class="max-w-300 mx-auto pt-20.5 pb-30">
+<section class="bg-btg-9 px-5">
+  <div class="max-w-300 mx-auto bg-radial from-btg-55 to-btg-9 to-70% pt-14.5">
     <h1 aria-label="BTG Pactual">
-      <BTGLogo class="w-53.5" />
+      <BTGLogo class="w-45 md:w-53.5" />
     </h1>
     <div
-      class="flex flex-col xl:flex-row justify-center gap-22 pt-20 lg:ps-12 text-white"
+      class="flex flex-col lg:flex-row justify-center gap-15 lg:gap-25 py-10 lg:py-20 text-white"
     >
-      <Title marginTop="xl:mt-5" />
-      <div class="hidden xl:block bg-white w-0.5"></div>
-      <div class="shrink-0 max-w-120 place-self-center">
-        <Cta />
+      <Title marginTop="lg:mt-0" showMap={false} />
+      <div
+        class="form-wrapper lg:mt-20 mb-14.5 lg:mb-30 place-self-center shrink-0"
+      >
+        <CTA />
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  .hero {
-    background-image: url("/images/bg-hero-mobile.jpg");
-
+  .form-wrapper {
     @media (min-width: 1024px) {
-      background-image: url("/images/bg-hero-desktop.jpg");
+      width: clamp(30rem, -2.5rem + 50.7813vw, 38.125rem);
     }
   }
 </style>

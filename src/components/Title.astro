@@ -1,9 +1,10 @@
 ---
 interface Props {
   marginTop: string;
+  showMap: boolean;
 }
 
-const { marginTop } = Astro.props as Props;
+const { marginTop, showMap } = Astro.props as Props;
 
 import Image from "astro/components/Image.astro";
 import EventTitle from "@/assets/img--event-title.svg";
@@ -23,22 +24,29 @@ import Date from "@/assets/ico-fecha.svg";
   </h2>
   <p class="mt-17 flex items-center gap-4">
     <span><Date width={30} /></span>
-    <span class="date pt-2 text-3xl md:text-[2.5rem]/10 font-light tracking-tight">
+    <span
+      class="date pt-2 text-3xl md:text-[2.5rem]/10 font-light tracking-tight"
+    >
       Miércoles 4 de marzo
     </span>
   </p>
   <p class="mt-2 flex items-center gap-4">
     <span><Time width={30} /></span>
-    <span class="date pt-2 text-3xl md:text-[2.5rem]/10 font-light tracking-tight"
+    <span
+      class="date pt-2 text-3xl md:text-[2.5rem]/10 font-light tracking-tight"
       >4:00 pm</span
     >
   </p>
-  <Image
-    src={Map}
-    alt="Mapa de Colombia"
-    width={340}
-    class="mx-auto hidden lg:block absolute -bottom-px m-0 left-0 right-0"
-  />
+  {
+    showMap && (
+      <Image
+        src={Map}
+        alt="Mapa de Colombia"
+        width={340}
+        class="mx-auto hidden lg:block absolute -bottom-px m-0 left-0 right-0"
+      />
+    )
+  }
 </div>
 
 <style>
